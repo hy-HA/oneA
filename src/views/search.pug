@@ -1,0 +1,10 @@
+extends base
+include mixins/video
+
+block content 
+    form(methd="GET")
+        input(placeholer="Search by title", name="keyword", type="text")
+        input(type="submit", value="Search now")
+    div
+        each potato in videos   
+            +video(potato)
