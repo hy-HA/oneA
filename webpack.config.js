@@ -1,3 +1,6 @@
+const path = require("path");
+//console.log(path.resolve())
+
 module.exports = {
     entry: "./src/client/js/main.js",
     mode: "development",
