@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+    if errorMessage
+        span=errorMessage
+    form.dashboard(method="POST")
+        input.dashboard__title(placeholder="Title", required, type="text", name="title", maxlength=80)
+        input.dashboard__text(placeholder="Text", required, type="text", name="text", maxlength=1000)
+        input.dashboard__submit(type="submit", value="Upload Video")

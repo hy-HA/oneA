@@ -1,7 +1,7 @@
 form {
-    max-width: 420px;
+    max-width: 60%;
     margin: 0 auto;
-    &:not(.search__form) {
+    &:not(.search__form, .dashboard) {
       padding: 30px;
       background-color: rgba($color: $bg, $alpha: 0.7);
       border-radius: 10px;
@@ -10,6 +10,7 @@ form {
   }
   
   input {
+    &:not(.dashboard__text, .dashboard__title ) {
     all: unset;
     padding: 15px 20px;
     border-radius: 5px;
@@ -21,6 +22,7 @@ form {
     width: 90%;
     &::placeholder {
       color: rgba(255, 255, 255, 0.7);
+    }
     }
   }
   

@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String },
   location: String,
   videos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Video" }],
+  bbses: [{type: mongoose.Schema.Types.ObjectId, ref: "Bbs"}],
 });
 
 userSchema.pre("save", async function () {

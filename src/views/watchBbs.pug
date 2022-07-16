@@ -1,0 +1,14 @@
+extends base.pug
+
+block content
+    div 
+        p=bbs.title
+        p=bbs.text
+        small=bbs.createdAt
+    div
+        small Uploaded by 
+            a(href=`/users/${bbs.owner._id}`)=bbs.owner.name
+    if String(bbs.owner._id) === String(loggedInUser._id)
+        a(href=`${bbs.id}/edit`) Edit Text &rarr;
+        br
+        a(href=`${bbs.id}/delete`) Delete Text &rarr;

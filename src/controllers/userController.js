@@ -1,5 +1,5 @@
 import User from "../models/User";
-import Video from "../models/Video";
+import Bbs from "../models/Bbs";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
 
@@ -223,3 +223,4 @@ export const see = async (req, res) => {
     user,
   });
 };
+
