@@ -1,0 +1,30 @@
+header {
+    padding: 3vh 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo {
+      color: $red;
+      font-size: 3vh;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        margin-left: 2vh;
+        font-size: 1vh;
+        font-weight: 1vh;
+        text-transform: uppercase;
+      }
+      i {
+        font-size: 1vh;
+      }
+    }
+    .header__btn {
+      background-color: white;
+      color: $bg;
+      padding: 0.3vh;
+      border-radius: 0.3vh;
+    }
+  }

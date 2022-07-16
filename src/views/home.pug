@@ -2,6 +2,8 @@ extends base
 include mixins/video
 
 block content   
-    h2 Welcome here you will see the videos about dancing
-    each potato in videos 
-        +video(potato)
+    div.video-grid
+        each video in videos
+            +video(video)
+        else
+            span.empty__message No videos found 
