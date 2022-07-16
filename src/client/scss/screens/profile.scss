@@ -4,11 +4,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 1vh;
     img {
-      margin-bottom: 10px;
+        width: 3vh;
+        height: 3vh;
+        margin-bottom: 1vh;
     }
     h3 {
       font-size: 18px;
     }
+  }
+  .profile__question {
+      text-align: center;
+      padding: 0.5vh;
+      margin: 0.5vh;
+      border-color: azure;
+      border: 0.1vh solid;
+      border-radius: 0.2vh;
+      h1 {
+          font-size: 1.5vh;
+          padding: 0.7vh;
+      }
+      h2 {
+          font-size: 1vh;
+      }
   }

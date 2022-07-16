@@ -6,6 +6,14 @@ block content
     div.profile__data
         img(src="/" + user.avatarUrl).avatar
         h3=user.name
+    div.profile__question
+        h2="올해의 목표는?"
+        div     
+            h1="리더즈처럼 내가 좋아하는 사람들과 좋아하는 일 하면서 성취감 얻기"
+    div.profile__question
+        h2="이번달의 목표는?"
+        div     
+            h1="개발로 즐거움 얻기"
     div.video-grid
         each video in user.videos
             +video(video)
