@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 export const getJoin = (req, res) => res.render("join", { pageTitle: "Join" });
 
 export const postJoin = async (req, res) => {
-  const { name, username, email, password, password2, location } = req.body;
+  const { username, email, password, password2, yeargoal, monthgoal } = req.body;
   const pageTitle = "Join";
   if (password !== password2) {
     return res.status(400).render("join", {
@@ -23,11 +23,11 @@ export const postJoin = async (req, res) => {
   }
   try {
     await User.create({
-      name,
       username,
       email,
       password,
-      location,
+      yeargoal,
+      monthgoal
     });
     return res.redirect("/login");
   } catch (error) {
@@ -123,12 +123,10 @@ export const finishGithubLogin = async (req, res) => {
     if (!user) {
       user = await User.create({
         avatarUrl: userData.avatar_url,
-        name: userData.name,
         username: userData.login,
         email: emailObj.email,
         password: "",
         socialOnly: true,
-        location: userData.location,
       });
     }
     req.session.loggedIn = true;
@@ -153,7 +151,7 @@ export const postEdit = async (req, res) => {
     session: {
       user: { _id, avatarUrl },
     },
-    body: { name, email, username, location },
+    body: { email, username, yeargoal, monthgoal },
     file,
   } = req;
   console.log(file);
@@ -161,10 +159,10 @@ export const postEdit = async (req, res) => {
     _id,
     {
       avatarUrl: file ? file.path : avatarUrl,
-      name,
       email,
       username,
-      location,
+      yeargoal,
+      monthgoal,
     },
     { new: true }
   );
@@ -207,7 +205,7 @@ export const postChangePassword = async (req, res) => {
 export const see = async (req, res) => {
   const { id } = req.params;
   const user = await User.findById(id).populate({
-    path: "videos",
+    path: "bbses",
     populate: {
       path: "owner",
       model: "User",
@@ -219,7 +217,7 @@ export const see = async (req, res) => {
   //const videos = await Video.find({ owner: user._id });
   //console.log(videos);
   return res.render("users/profile", {
-    pageTitle: user.name,
+    pageTitle: user.username,
     user,
   });
 };

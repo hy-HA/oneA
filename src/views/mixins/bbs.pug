@@ -2,7 +2,7 @@ mixin bbs(bbs)
     a(href=`/videos/bbs/${bbs.id}`)
         div
         div
-            span=bbs.text
+            span=bbs.title
             div
-                span #{bbs.owner.name} • 
+                span • #{bbs.owner.username} • 
                 span #{bbs.meta.views} 회

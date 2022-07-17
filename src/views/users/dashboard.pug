@@ -5,18 +5,18 @@ include ../mixins/bbs
 
 
 block content
-    div.dashboard
+    div
         h1="달성현황 Dashboard"
-    div.profile__question
-        h2="올해의 목표는?"
-        div     
-            h1="리더즈처럼 내가 좋아하는 사람들과 좋아하는 일 하면서 성취감 얻기"
-    div.profile__question
-        h2="이번달의 목표는?"
-        div     
-            h1="개발로 즐거움 얻기"
-    div     
-        each bbs in bbses
-            +bbs(bbs)
-        else
-            span.empty__message No videos found 
+        div.profile__question
+            h2="올해의 목표는?"
+            div     
+                h1="리더즈처럼 내가 좋아하는 사람들과 좋아하는 일 하면서 성취감 얻기"
+        div.profile__question
+            h2="이번달의 목표는?"
+            div     
+                h1="개발로 즐거움 얻기"
+        div.profile__question     
+            each bbs in bbses
+                +bbs(bbs)
+            else
+                span.empty__message No videos found 

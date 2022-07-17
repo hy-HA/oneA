@@ -1,49 +1,16 @@
-.dashboard {
-    width: 100vw;
-    padding: 2vh;
-    border: 1px solid rgba($color: #fff, $alpha: 0.1);
-}
-.dashboard__title {
-        all: unset;
-        padding: 1vh;
-        border-radius: 0.2vh;
-        border: 0.1vh solid rgba(255, 255, 255, 0.2);
-        background-color: black;
-        margin-bottom: 0.4vh;
-        font-size: 1vh;
-        color: white;
-        width: 90%;
-    input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-    }
 .dashboard__text {
     all: unset;
     padding: 1vh;
     border-radius: 0.2vh;
-    border: 0.1vh solid rgba(255, 255, 255, 0.2);
+    border: 0.2vh solid rgba($color: #fff, $alpha: 0.2);
     background-color: black;
     margin-bottom: 0.4vh;
-    font-size: 1vh;
+    font-size: 1.5vh;
     color: white;
     width: 90%;
     height: 600px;
-input::placeholder {
+    &::placeholder {
+        text-align:center;
         color: rgba(255, 255, 255, 0.7);
     }
-}        
-.dashboard__submit {
-    border-radius: 0.2vh;
-    padding: 1vh;
-    background-color: white;
-    color: rgba($color: $red, $alpha: 1);
-    text-align: center;
-    cursor: pointer;
-    display: block;
-}
-
-
-
-
-  
-  
+}   

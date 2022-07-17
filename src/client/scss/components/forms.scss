@@ -1,26 +1,33 @@
 form {
-    max-width: 60%;
-    margin: 0 auto;
-    &:not(.search__form, .dashboard) {
-      padding: 30px;
-      background-color: rgba($color: $bg, $alpha: 0.7);
-      border-radius: 10px;
-      border: 1px solid rgba($color: #fff, $alpha: 0.1);
+  text-align:left;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &:not(.search__form) {
+    padding: 1vh ;
+    background-color: rgba($color: $bg, $alpha: 0.7);
+    border-radius: 0.2vh;
+    border: 0.2vh solid rgba($color: #fff, $alpha: 0.1);
     }
   }
   
   input {
-    &:not(.dashboard__text, .dashboard__title ) {
+    display: block;
+    &:not(.dashboard__text, input[type="range"]) {
     all: unset;
-    padding: 15px 20px;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1vh;
+    border-radius: 0.2vh;
+    border: 0.2vh solid rgba(255, 255, 255, 0.2);
     background-color: black;
-    margin-bottom: 5px;
-    font-size: 16px;
+    margin-bottom: 0.5vh;
+    font-size: 1.5vh;
     color: white;
     width: 90%;
     &::placeholder {
+      text-align:center;
       color: rgba(255, 255, 255, 0.7);
     }
     }
@@ -28,8 +35,8 @@ form {
   
   input[type="submit"],
   .social__btn {
-    border-radius: 5px;
-    padding: 12px 20px;
+    border-radius: 0.2vh;
+    padding: 1vh;
     background-color: white;
     color: rgba($color: $red, $alpha: 1);
     text-align: center;

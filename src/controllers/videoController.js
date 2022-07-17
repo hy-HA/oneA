@@ -166,17 +166,21 @@ export const dashboard = async (req, res) => {
   };
 
 export const watchBbs = async (req,res) => {
-    const {
-        session: {
-          user: { _id },
-        },
-      } = req;
-    const bbs = await Bbs.findById(_id).populate("owner");
-    //const video = await Video.findById(id);
-    //const owner = await User.findById(video.owner);
-    //console.log(video);
+  const {id} = req.params;
+  const bbs = await Bbs.findById(id).populate("owner");
     if(!bbs) {
         return res.render("404", {pageTitle: "Text not found"});  
     }
     return res.render("watchBbs", { pageTitle: bbs.title, bbs });
+};
+
+export const registerView = async (req, res) => {
+  const { id } = req.params;
+  const video = await Video.findById(id);
+  if (!video) {
+    return res.sendStatus(404);
+  }
+  video.meta.views = video.meta.views + 1;
+  await video.save();
+  return res.sendStatus(200);
 };
